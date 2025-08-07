@@ -720,4 +720,4 @@ clickPopStyle.textContent = `
 `;
 document.head.appendChild(clickPopStyle);
 
-console.log('🌈 MegaMart initialized with colorful Daraz/Temu style! Ready to boost your LinkedIn profile! 🚀');
+console.log('🌈 MegaMart initialized with colorful Daraz/Temu style! 🚀');
