@@ -1,24 +1,29 @@
 // DOM Elements
 const searchInput = document.querySelector('.search-bar input');
 const searchButton = document.querySelector('.search-bar button');
-const cartButton = document.querySelector('.cart');
+const cartIcon = document.querySelector('.cart-icon');
 const cartCount = document.querySelector('.cart-count');
-const addToCartButtons = document.querySelectorAll('.add-to-cart');
-const filterTabs = document.querySelectorAll('.tab');
-const productCards = document.querySelectorAll('.product-card');
+const addToCartButtons = document.querySelectorAll('.add-to-cart-btn, .quick-add-btn');
+const navItems = document.querySelectorAll('.nav-item');
+const flashProducts = document.querySelectorAll('.flash-product');
+const categoryItems = document.querySelectorAll('.category-item');
+const storageOptions = document.querySelectorAll('.storage');
+const colorOptions = document.querySelectorAll('.color');
+const wishlistButtons = document.querySelectorAll('.wishlist-btn');
 const newsletterForm = document.querySelector('.newsletter-form');
-const categoryCards = document.querySelectorAll('.category-card');
-const actionButtons = document.querySelectorAll('.action-btn');
+const trendingSearches = document.querySelectorAll('.trending-searches span');
 
 // Shopping Cart State
 let cart = [];
-let cartItemCount = 3; // Initial cart count
+let cartItemCount = 0;
 
 // Initialize the website
 document.addEventListener('DOMContentLoaded', function() {
     initializeEventListeners();
+    startFlashSaleTimer();
+    startCountdownTimer();
     animateOnScroll();
-    typeWriterEffect();
+    initializeColorfulAnimations();
 });
 
 // Event Listeners
@@ -31,14 +36,47 @@ function initializeEventListeners() {
         }
     });
 
+    // Trending searches
+    trendingSearches.forEach(search => {
+        search.addEventListener('click', function() {
+            searchInput.value = this.textContent;
+            handleSearch();
+        });
+    });
+
     // Add to cart functionality
     addToCartButtons.forEach(button => {
         button.addEventListener('click', handleAddToCart);
     });
 
-    // Filter tabs
-    filterTabs.forEach(tab => {
-        tab.addEventListener('click', handleFilter);
+    // Navigation items
+    navItems.forEach(nav => {
+        nav.addEventListener('click', handleNavigation);
+    });
+
+    // Flash products hover effects
+    flashProducts.forEach(product => {
+        product.addEventListener('click', handleProductClick);
+    });
+
+    // Category items
+    categoryItems.forEach(category => {
+        category.addEventListener('click', handleCategoryClick);
+    });
+
+    // Storage options
+    storageOptions.forEach(storage => {
+        storage.addEventListener('click', handleStorageSelection);
+    });
+
+    // Color options
+    colorOptions.forEach(color => {
+        color.addEventListener('click', handleColorSelection);
+    });
+
+    // Wishlist buttons
+    wishlistButtons.forEach(btn => {
+        btn.addEventListener('click', handleWishlist);
     });
 
     // Newsletter subscription
@@ -46,76 +84,45 @@ function initializeEventListeners() {
         newsletterForm.addEventListener('submit', handleNewsletterSubmit);
     }
 
-    // Category cards
-    categoryCards.forEach(card => {
-        card.addEventListener('click', handleCategoryClick);
-    });
-
-    // Action buttons (heart and eye icons)
-    actionButtons.forEach(button => {
-        button.addEventListener('click', handleActionButton);
-    });
-
-    // Cart button
-    cartButton.addEventListener('click', handleCartClick);
-
-    // Smooth scrolling for CTA button
-    const ctaButton = document.querySelector('.cta-button');
-    if (ctaButton) {
-        ctaButton.addEventListener('click', () => {
-            document.querySelector('.products').scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    }
+    // Cart icon
+    cartIcon.addEventListener('click', handleCartClick);
 }
 
-// Search functionality
+// Search functionality with colorful feedback
 function handleSearch() {
     const searchTerm = searchInput.value.toLowerCase().trim();
     
     if (searchTerm === '') {
-        showNotification('Please enter a search term', 'warning');
+        showColorfulNotification('🔍 Please enter a search term', 'warning');
         return;
     }
 
     // Add loading animation
-    searchButton.innerHTML = '<div class="loading"></div>';
+    searchButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
     
-    // Simulate search delay
+    // Simulate search with colorful feedback
     setTimeout(() => {
-        const products = document.querySelectorAll('.product-card');
-        let foundProducts = 0;
-
-        products.forEach(product => {
-            const title = product.querySelector('h3').textContent.toLowerCase();
-            const isVisible = title.includes(searchTerm);
-            
-            product.style.display = isVisible ? 'block' : 'none';
-            if (isVisible) foundProducts++;
-        });
-
         // Reset search button
         searchButton.innerHTML = '<i class="fas fa-search"></i>';
         
-        if (foundProducts === 0) {
-            showNotification(`No products found for "${searchTerm}"`, 'info');
-        } else {
-            showNotification(`Found ${foundProducts} product(s) for "${searchTerm}"`, 'success');
-            document.querySelector('.products').scrollIntoView({ behavior: 'smooth' });
-        }
-    }, 1000);
+        // Show colorful search results
+        showColorfulNotification(`🎉 Found amazing deals for "${searchTerm}"!`, 'success');
+        
+        // Animate search results
+        animateSearchResults();
+    }, 1500);
 }
 
-// Add to cart functionality
+// Add to cart with colorful animations
 function handleAddToCart(e) {
     e.preventDefault();
     const button = e.target;
-    const productCard = button.closest('.product-card');
-    const productName = productCard.querySelector('h3').textContent;
-    const productPrice = productCard.querySelector('.current-price').textContent;
+    const productCard = button.closest('.flash-product, .iphone-card, .trending-card');
     
     // Create cart item
+    const productName = productCard.querySelector('h4, .product-name')?.textContent || 'Product';
+    const productPrice = productCard.querySelector('.sale-price, .current-price, .price')?.textContent || '₹999';
+    
     const cartItem = {
         id: Date.now(),
         name: productName,
@@ -127,61 +134,191 @@ function handleAddToCart(e) {
     cartItemCount++;
     updateCartCount();
     
-    // Button animation
+    // Colorful button animation
     const originalText = button.textContent;
-    button.textContent = 'Added!';
-    button.style.background = 'linear-gradient(135deg, #2ed573 0%, #17c0eb 100%)';
+    const originalBackground = button.style.background;
+    
+    button.textContent = '✅ Added!';
+    button.style.background = 'linear-gradient(135deg, #2ed573, #17c0eb)';
+    button.style.transform = 'scale(1.05)';
     
     setTimeout(() => {
         button.textContent = originalText;
-        button.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
-    }, 1500);
+        button.style.background = originalBackground;
+        button.style.transform = 'scale(1)';
+    }, 2000);
     
-    showNotification(`${productName} added to cart!`, 'success');
+    showColorfulNotification(`🛒 ${productName} added to cart!`, 'success');
     animateCartIcon();
+    createFloatingIcon();
 }
 
-// Filter products
-function handleFilter(e) {
-    const filter = e.target.textContent.toLowerCase();
+// Navigation with colorful highlights
+function handleNavigation(e) {
+    e.preventDefault();
+    const navItem = e.currentTarget;
     
-    // Update active tab
-    filterTabs.forEach(tab => tab.classList.remove('active'));
-    e.target.classList.add('active');
+    // Remove active class from all nav items
+    navItems.forEach(item => item.classList.remove('active'));
     
-    // Filter products
-    productCards.forEach(card => {
-        if (filter === 'all') {
-            card.style.display = 'block';
+    // Add active class to clicked item
+    navItem.classList.add('active');
+    
+    // Colorful feedback
+    const category = navItem.querySelector('span').textContent;
+    showColorfulNotification(`🎯 Browsing ${category} section`, 'info');
+    
+    // Animate content based on selection
+    animateContentChange();
+}
+
+// Flash sale timer
+function startFlashSaleTimer() {
+    const timer = document.querySelector('.timer');
+    if (!timer) return;
+    
+    let timeLeft = 2 * 60 * 60 + 45 * 60 + 30; // 2h 45m 30s
+    
+    const updateTimer = () => {
+        const hours = Math.floor(timeLeft / 3600);
+        const minutes = Math.floor((timeLeft % 3600) / 60);
+        const seconds = timeLeft % 60;
+        
+        timer.textContent = `Ends in: ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        
+        if (timeLeft > 0) {
+            timeLeft--;
         } else {
-            const category = getProductCategory(card);
-            card.style.display = category.includes(filter) ? 'block' : 'none';
+            timer.textContent = '🔥 SALE ENDED!';
+            timer.style.background = '#ff4757';
         }
-    });
+    };
     
-    // Animate filtered products
+    updateTimer();
+    setInterval(updateTimer, 1000);
+}
+
+// Countdown timer for hero section
+function startCountdownTimer() {
+    const timeUnits = document.querySelectorAll('.time-unit');
+    if (timeUnits.length === 0) return;
+    
+    let totalSeconds = 23 * 3600 + 45 * 60 + 12; // 23h 45m 12s
+    
+    const updateCountdown = () => {
+        const hours = Math.floor(totalSeconds / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const seconds = totalSeconds % 60;
+        
+        if (timeUnits[0]) timeUnits[0].querySelector('.number').textContent = hours;
+        if (timeUnits[1]) timeUnits[1].querySelector('.number').textContent = minutes;
+        if (timeUnits[2]) timeUnits[2].querySelector('.number').textContent = seconds;
+        
+        if (totalSeconds > 0) {
+            totalSeconds--;
+        }
+    };
+    
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+}
+
+// Handle product clicks with colorful animations
+function handleProductClick(e) {
+    const product = e.currentTarget;
+    const productName = product.querySelector('.product-name').textContent;
+    
+    // Add colorful click effect
+    product.style.transform = 'scale(0.95)';
     setTimeout(() => {
-        const visibleCards = document.querySelectorAll('.product-card[style="display: block;"], .product-card:not([style])');
-        visibleCards.forEach((card, index) => {
-            card.style.animation = `slideInUp 0.6s ease-out ${index * 0.1}s both`;
-        });
-    }, 100);
-}
-
-// Get product category based on content
-function getProductCategory(card) {
-    const title = card.querySelector('h3').textContent.toLowerCase();
+        product.style.transform = 'scale(1)';
+    }, 150);
     
-    if (title.includes('headphones') || title.includes('smartphone') || title.includes('coffee maker') || title.includes('watch')) {
-        return 'electronics';
-    } else if (title.includes('shoes') || title.includes('backpack')) {
-        return 'fashion';
-    } else {
-        return 'home';
-    }
+    showColorfulNotification(`👀 Viewing ${productName}`, 'info');
 }
 
-// Newsletter subscription
+// Category click handler with colorful transitions
+function handleCategoryClick(e) {
+    const category = e.currentTarget;
+    const categoryName = category.querySelector('h3').textContent;
+    
+    // Add ripple effect
+    createRippleEffect(category, e);
+    
+    showColorfulNotification(`🛍️ Exploring ${categoryName}`, 'success');
+}
+
+// Storage selection for iPhones
+function handleStorageSelection(e) {
+    const storage = e.target;
+    const card = storage.closest('.iphone-card');
+    
+    // Remove active class from all storage options in this card
+    card.querySelectorAll('.storage').forEach(s => s.classList.remove('active'));
+    
+    // Add active class to clicked storage
+    storage.classList.add('active');
+    
+    // Update price based on storage (simulation)
+    const priceElement = card.querySelector('.current-price');
+    const basePrice = parseInt(priceElement.textContent.replace(/[^\d]/g, ''));
+    const storageSize = storage.textContent;
+    
+    let newPrice = basePrice;
+    if (storageSize.includes('512GB')) newPrice += 10000;
+    if (storageSize.includes('1TB')) newPrice += 20000;
+    
+    priceElement.textContent = `₹${newPrice.toLocaleString()}`;
+    
+    showColorfulNotification(`📱 Selected ${storageSize} storage`, 'info');
+}
+
+// Color selection for iPhones
+function handleColorSelection(e) {
+    const color = e.target;
+    const card = color.closest('.iphone-card');
+    
+    // Remove active class from all colors in this card
+    card.querySelectorAll('.color').forEach(c => c.classList.remove('active'));
+    
+    // Add active class to clicked color
+    color.classList.add('active');
+    
+    // Add color selection animation
+    color.style.transform = 'scale(1.3)';
+    setTimeout(() => {
+        color.style.transform = 'scale(1.2)';
+    }, 200);
+    
+    showColorfulNotification(`🎨 Color selected!`, 'success');
+}
+
+// Wishlist functionality
+function handleWishlist(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    const btn = e.currentTarget;
+    const icon = btn.querySelector('i');
+    
+    if (icon.classList.contains('fas')) {
+        icon.classList.replace('fas', 'far');
+        btn.style.color = '#666';
+        showColorfulNotification('💔 Removed from wishlist', 'warning');
+    } else {
+        icon.classList.replace('far', 'fas');
+        btn.style.color = '#ff4757';
+        showColorfulNotification('❤️ Added to wishlist!', 'success');
+    }
+    
+    // Heart animation
+    btn.style.transform = 'scale(1.3)';
+    setTimeout(() => {
+        btn.style.transform = 'scale(1)';
+    }, 300);
+}
+
+// Newsletter subscription with validation
 function handleNewsletterSubmit(e) {
     e.preventDefault();
     const emailInput = e.target.querySelector('input[type="email"]');
@@ -191,21 +328,25 @@ function handleNewsletterSubmit(e) {
         const button = e.target.querySelector('button');
         const originalText = button.textContent;
         
-        button.textContent = 'Subscribing...';
+        button.textContent = '📧 Subscribing...';
         button.disabled = true;
         
         setTimeout(() => {
-            button.textContent = 'Subscribed!';
+            button.textContent = '✅ Subscribed!';
             emailInput.value = '';
-            showNotification('Successfully subscribed to newsletter!', 'success');
+            showColorfulNotification('🎉 Welcome to MegaMart family! Check your email for exclusive deals!', 'success');
             
             setTimeout(() => {
                 button.textContent = originalText;
                 button.disabled = false;
-            }, 2000);
-        }, 1500);
+            }, 3000);
+        }, 2000);
     } else {
-        showNotification('Please enter a valid email address', 'error');
+        showColorfulNotification('❌ Please enter a valid email address', 'error');
+        emailInput.style.borderColor = '#ff4757';
+        setTimeout(() => {
+            emailInput.style.borderColor = '';
+        }, 2000);
     }
 }
 
@@ -215,122 +356,167 @@ function isValidEmail(email) {
     return emailRegex.test(email);
 }
 
-// Category click handler
-function handleCategoryClick(e) {
-    const category = e.currentTarget.querySelector('h3').textContent.toLowerCase();
-    
-    // Update filter tabs
-    filterTabs.forEach(tab => {
-        tab.classList.remove('active');
-        if (tab.textContent.toLowerCase() === category) {
-            tab.classList.add('active');
-        }
-    });
-    
-    // Filter products
-    handleFilter({ target: { textContent: category } });
-    
-    // Scroll to products
-    document.querySelector('.products').scrollIntoView({ behavior: 'smooth' });
-}
-
-// Action button handler (heart and eye icons)
-function handleActionButton(e) {
-    e.preventDefault();
-    const icon = e.target.closest('.action-btn').querySelector('i');
-    
-    if (icon.classList.contains('fa-heart')) {
-        // Toggle wishlist
-        if (icon.classList.contains('fas')) {
-            icon.classList.replace('fas', 'far');
-            showNotification('Removed from wishlist', 'info');
-        } else {
-            icon.classList.replace('far', 'fas');
-            showNotification('Added to wishlist!', 'success');
-        }
-    } else if (icon.classList.contains('fa-eye')) {
-        // Quick view
-        showNotification('Quick view feature coming soon!', 'info');
-    }
-}
-
 // Cart click handler
 function handleCartClick() {
     if (cart.length === 0) {
-        showNotification('Your cart is empty', 'info');
+        showColorfulNotification('🛒 Your cart is empty. Start shopping!', 'info');
     } else {
-        showNotification(`You have ${cart.length} item(s) in your cart`, 'info');
+        showColorfulNotification(`🛍️ You have ${cart.length} awesome item(s) in your cart!`, 'success');
+        animateCartIcon();
     }
 }
 
-// Update cart count
+// Update cart count with animation
 function updateCartCount() {
     cartCount.textContent = cartItemCount;
+    
+    // Animate cart count
+    cartCount.style.transform = 'scale(1.5)';
+    cartCount.style.background = '#2ed573';
+    
+    setTimeout(() => {
+        cartCount.style.transform = 'scale(1)';
+        cartCount.style.background = '#ff4757';
+    }, 300);
 }
 
 // Animate cart icon
 function animateCartIcon() {
-    cartButton.style.animation = 'none';
+    cartIcon.style.animation = 'none';
     setTimeout(() => {
-        cartButton.style.animation = 'bounce 0.6s ease-in-out';
+        cartIcon.style.animation = 'bounce 0.8s ease-in-out';
     }, 10);
 }
 
-// Show notification
-function showNotification(message, type = 'info') {
+// Create floating cart icon animation
+function createFloatingIcon() {
+    const floatingIcon = document.createElement('div');
+    floatingIcon.innerHTML = '🛒';
+    floatingIcon.style.cssText = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        font-size: 2rem;
+        z-index: 10000;
+        animation: floatToCart 1s ease-out forwards;
+        pointer-events: none;
+    `;
+    
+    document.body.appendChild(floatingIcon);
+    
+    setTimeout(() => {
+        floatingIcon.remove();
+    }, 1000);
+}
+
+// Show colorful notifications
+function showColorfulNotification(message, type = 'info') {
     // Remove existing notifications
-    const existingNotifications = document.querySelectorAll('.notification');
+    const existingNotifications = document.querySelectorAll('.colorful-notification');
     existingNotifications.forEach(notif => notif.remove());
     
     const notification = document.createElement('div');
-    notification.className = `notification notification-${type}`;
+    notification.className = `colorful-notification notification-${type}`;
     notification.textContent = message;
     
-    // Styles for notification
+    // Colorful gradient backgrounds
+    const colors = {
+        success: 'linear-gradient(135deg, #2ed573, #17c0eb, #667eea)',
+        error: 'linear-gradient(135deg, #ff4757, #ff3838, #c44569)',
+        warning: 'linear-gradient(135deg, #ffa502, #ff6348, #ff9ff3)',
+        info: 'linear-gradient(135deg, #667eea, #764ba2, #f093fb)'
+    };
+    
     Object.assign(notification.style, {
         position: 'fixed',
         top: '20px',
         right: '20px',
         padding: '15px 25px',
-        borderRadius: '10px',
+        borderRadius: '15px',
         color: 'white',
-        fontWeight: '600',
+        fontWeight: '700',
+        fontSize: '1rem',
         zIndex: '10000',
         transform: 'translateX(100%)',
-        transition: 'transform 0.3s ease',
-        maxWidth: '300px',
-        boxShadow: '0 10px 30px rgba(0, 0, 0, 0.2)'
+        transition: 'all 0.3s ease',
+        maxWidth: '350px',
+        boxShadow: '0 15px 35px rgba(0, 0, 0, 0.2)',
+        background: colors[type] || colors.info,
+        backdropFilter: 'blur(10px)'
     });
-    
-    // Set background color based on type
-    const colors = {
-        success: 'linear-gradient(135deg, #2ed573, #17c0eb)',
-        error: 'linear-gradient(135deg, #ff4757, #ff3838)',
-        warning: 'linear-gradient(135deg, #ffa502, #ff6348)',
-        info: 'linear-gradient(135deg, #667eea, #764ba2)'
-    };
-    
-    notification.style.background = colors[type] || colors.info;
     
     document.body.appendChild(notification);
     
     // Animate in
     setTimeout(() => {
-        notification.style.transform = 'translateX(0)';
+        notification.style.transform = 'translateX(0) scale(1.05)';
     }, 100);
     
-    // Auto remove
     setTimeout(() => {
-        notification.style.transform = 'translateX(100%)';
+        notification.style.transform = 'translateX(0) scale(1)';
+    }, 200);
+    
+    // Auto remove with bounce out animation
+    setTimeout(() => {
+        notification.style.transform = 'translateX(100%) scale(0.8)';
         setTimeout(() => {
             if (notification.parentNode) {
                 notification.remove();
             }
         }, 300);
-    }, 3000);
+    }, 4000);
 }
 
-// Animate elements on scroll
+// Create ripple effect
+function createRippleEffect(element, event) {
+    const ripple = document.createElement('div');
+    const rect = element.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const x = event.clientX - rect.left - size / 2;
+    const y = event.clientY - rect.top - size / 2;
+    
+    ripple.style.cssText = `
+        position: absolute;
+        width: ${size}px;
+        height: ${size}px;
+        left: ${x}px;
+        top: ${y}px;
+        background: rgba(255, 255, 255, 0.4);
+        border-radius: 50%;
+        transform: scale(0);
+        animation: ripple 0.6s ease-out;
+        pointer-events: none;
+    `;
+    
+    element.style.position = 'relative';
+    element.style.overflow = 'hidden';
+    element.appendChild(ripple);
+    
+    setTimeout(() => {
+        ripple.remove();
+    }, 600);
+}
+
+// Animate search results
+function animateSearchResults() {
+    const allProducts = document.querySelectorAll('.flash-product, .trending-card, .iphone-card');
+    allProducts.forEach((product, index) => {
+        product.style.animation = `none`;
+        setTimeout(() => {
+            product.style.animation = `colorfulPop 0.6s ease-out ${index * 0.1}s both`;
+        }, 100);
+    });
+}
+
+// Animate content change
+function animateContentChange() {
+    const sections = document.querySelectorAll('.flash-sale, .categories-section, .iphone-section, .trending-section');
+    sections.forEach((section, index) => {
+        section.style.animation = `colorfulSlide 0.8s ease-out ${index * 0.2}s both`;
+    });
+}
+
+// Initialize colorful animations on scroll
 function animateOnScroll() {
     const observerOptions = {
         threshold: 0.1,
@@ -340,13 +526,16 @@ function animateOnScroll() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.animation = 'slideInUp 0.8s ease-out forwards';
+                entry.target.style.animation = 'colorfulSlideUp 0.8s ease-out forwards';
             }
         });
     }, observerOptions);
     
-    // Observe elements
-    const animateElements = document.querySelectorAll('.product-card, .category-card, .newsletter-content');
+    // Observe colorful elements
+    const animateElements = document.querySelectorAll(
+        '.flash-product, .category-item, .iphone-card, .trending-card, .promo-banner'
+    );
+    
     animateElements.forEach(element => {
         element.style.opacity = '0';
         element.style.transform = 'translateY(30px)';
@@ -354,109 +543,181 @@ function animateOnScroll() {
     });
 }
 
-// Typewriter effect for hero title
-function typeWriterEffect() {
-    const heroTitle = document.querySelector('.hero h1');
-    if (!heroTitle) return;
-    
-    const text = heroTitle.textContent;
-    heroTitle.textContent = '';
-    heroTitle.style.borderRight = '2px solid white';
-    
-    let i = 0;
-    const typeInterval = setInterval(() => {
-        heroTitle.textContent = text.slice(0, i + 1);
-        i++;
+// Initialize colorful animations and effects
+function initializeColorfulAnimations() {
+    // Add hover effects to category items
+    categoryItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-15px) scale(1.05)';
+        });
         
-        if (i === text.length) {
-            clearInterval(typeInterval);
-            setTimeout(() => {
-                heroTitle.style.borderRight = 'none';
-            }, 1000);
-        }
-    }, 100);
-}
-
-// Add bounce animation for cart
-const bounceStyle = document.createElement('style');
-bounceStyle.textContent = `
-    @keyframes bounce {
-        0%, 20%, 60%, 100% {
-            transform: translateY(0);
-        }
-        40% {
-            transform: translateY(-10px);
-        }
-        80% {
-            transform: translateY(-5px);
-        }
-    }
-`;
-document.head.appendChild(bounceStyle);
-
-// Smooth page transitions
-window.addEventListener('beforeunload', function() {
-    document.body.style.opacity = '0';
-    document.body.style.transition = 'opacity 0.3s ease';
-});
-
-// Performance optimization - lazy loading for images
-function lazyLoadImages() {
-    const images = document.querySelectorAll('img[data-src]');
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.classList.remove('lazy');
-                imageObserver.unobserve(img);
-            }
+        item.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
         });
     });
     
-    images.forEach(img => imageObserver.observe(img));
-}
-
-// Initialize lazy loading
-lazyLoadImages();
-
-// Add loading overlay
-function showLoadingOverlay() {
-    const overlay = document.createElement('div');
-    overlay.className = 'loading-overlay';
-    overlay.innerHTML = `
-        <div class="loading-spinner">
-            <div class="spinner"></div>
-            <p>Loading amazing products...</p>
-        </div>
-    `;
-    
-    Object.assign(overlay.style, {
-        position: 'fixed',
-        top: '0',
-        left: '0',
-        width: '100%',
-        height: '100%',
-        background: 'rgba(255, 255, 255, 0.95)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        zIndex: '9999',
-        backdropFilter: 'blur(5px)'
+    // Add floating animation to flash sale products
+    flashProducts.forEach((product, index) => {
+        product.style.animationDelay = `${index * 0.2}s`;
+        product.classList.add('floating');
     });
     
-    document.body.appendChild(overlay);
+    // Add colorful loading animation
+    addColorfulLoadingCSS();
     
-    setTimeout(() => {
-        overlay.style.opacity = '0';
-        overlay.style.transition = 'opacity 0.5s ease';
-        setTimeout(() => overlay.remove(), 500);
-    }, 2000);
+    // Add rainbow border animation to trending searches
+    trendingSearches.forEach(search => {
+        search.addEventListener('mouseenter', function() {
+            this.style.background = 'linear-gradient(45deg, #667eea, #764ba2, #f093fb)';
+            this.style.transform = 'translateY(-3px) scale(1.1)';
+        });
+        
+        search.addEventListener('mouseleave', function() {
+            this.style.background = 'rgba(255, 255, 255, 0.2)';
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
 }
 
-// Show loading on page load
-window.addEventListener('load', () => {
-    setTimeout(showLoadingOverlay, 500);
+// Add colorful CSS animations
+function addColorfulLoadingCSS() {
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes colorfulPop {
+            0% {
+                opacity: 0;
+                transform: scale(0.8) translateY(20px);
+            }
+            50% {
+                transform: scale(1.05) translateY(-5px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        
+        @keyframes colorfulSlide {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes colorfulSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 60%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-15px);
+            }
+            80% {
+                transform: translateY(-8px);
+            }
+        }
+        
+        @keyframes ripple {
+            to {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes floatToCart {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(200px, -200px) scale(0.5);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes floating {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        .colorful-notification {
+            animation: colorfulNotificationSlide 0.3s ease-out;
+        }
+        
+        @keyframes colorfulNotificationSlide {
+            from {
+                transform: translateX(100%) scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0) scale(1);
+                opacity: 1;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// Add some fun interactive elements
+document.addEventListener('click', function(e) {
+    // Create colorful click effects
+    const clickEffect = document.createElement('div');
+    clickEffect.style.cssText = `
+        position: fixed;
+        left: ${e.clientX - 10}px;
+        top: ${e.clientY - 10}px;
+        width: 20px;
+        height: 20px;
+        background: radial-gradient(circle, #667eea, #764ba2, #f093fb);
+        border-radius: 50%;
+        animation: clickPop 0.5s ease-out forwards;
+        pointer-events: none;
+        z-index: 9999;
+    `;
+    
+    document.body.appendChild(clickEffect);
+    
+    setTimeout(() => {
+        clickEffect.remove();
+    }, 500);
 });
 
-console.log('🛍️ EliteShop initialized successfully! Ready for LinkedIn showcase! 🚀');
+// Add click pop animation
+const clickPopStyle = document.createElement('style');
+clickPopStyle.textContent = `
+    @keyframes clickPop {
+        0% {
+            transform: scale(0);
+            opacity: 1;
+        }
+        100% {
+            transform: scale(3);
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(clickPopStyle);
+
+console.log('🌈 MegaMart initialized with colorful Daraz/Temu style! Ready to boost your LinkedIn profile! 🚀');

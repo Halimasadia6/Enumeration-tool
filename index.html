@@ -3,253 +3,411 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EliteShop - Premium Online Shopping</title>
+    <title>MegaMart - Your Ultimate Shopping Destination</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <div class="container">
-            <div class="nav">
+            <div class="header-top">
                 <div class="logo">
-                    <i class="fas fa-shopping-bag"></i>
-                    <span>EliteShop</span>
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>MegaMart</span>
                 </div>
-                
-                <div class="search-bar">
-                    <input type="text" placeholder="Search products...">
-                    <button><i class="fas fa-search"></i></button>
-                </div>
-                
-                <div class="nav-actions">
-                    <div class="cart">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count">3</span>
+                <div class="search-container">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search for products, brands and more...">
+                        <button><i class="fas fa-search"></i></button>
                     </div>
-                    <div class="user">
+                    <div class="trending-searches">
+                        <span>iPhone 15</span>
+                        <span>Samsung Galaxy</span>
+                        <span>Laptop</span>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <div class="cart-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </div>
+                    <div class="user-icon">
                         <i class="fas fa-user"></i>
                     </div>
                 </div>
             </div>
+            <nav class="main-nav">
+                <a href="#" class="nav-item active">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>Mobiles</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-laptop"></i>
+                    <span>Electronics</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-tshirt"></i>
+                    <span>Fashion</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-home"></i>
+                    <span>Home & Garden</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-gamepad"></i>
+                    <span>Gaming</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-dumbbell"></i>
+                    <span>Sports</span>
+                </a>
+            </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Discover Premium Products</h1>
-                <p>Shop the latest trends with unbeatable prices and quality</p>
-                <button class="cta-button">Shop Now</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Categories -->
-    <section class="categories">
-        <div class="container">
-            <h2>Shop by Category</h2>
-            <div class="category-grid">
-                <div class="category-card">
-                    <i class="fas fa-laptop"></i>
-                    <h3>Electronics</h3>
+    <!-- Hero Carousel -->
+    <section class="hero-carousel">
+        <div class="carousel-container">
+            <div class="carousel-slide active" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                <div class="slide-content">
+                    <h1>🔥 MEGA SALE 70% OFF!</h1>
+                    <p>Limited time offer on all electronics</p>
+                    <div class="countdown">
+                        <div class="time-unit">
+                            <span class="number">23</span>
+                            <span class="label">Hours</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number">45</span>
+                            <span class="label">Minutes</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number">12</span>
+                            <span class="label">Seconds</span>
+                        </div>
+                    </div>
+                    <button class="cta-btn">Shop Now</button>
                 </div>
-                <div class="category-card">
-                    <i class="fas fa-tshirt"></i>
-                    <h3>Fashion</h3>
-                </div>
-                <div class="category-card">
-                    <i class="fas fa-home"></i>
-                    <h3>Home & Living</h3>
-                </div>
-                <div class="category-card">
-                    <i class="fas fa-dumbbell"></i>
-                    <h3>Sports</h3>
+                <div class="slide-image">
+                    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500&h=400&fit=crop" alt="Electronics">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Products Section -->
-    <section class="products">
+    <!-- Flash Sale Banner -->
+    <section class="flash-sale">
         <div class="container">
-            <div class="section-header">
-                <h2>Featured Products</h2>
-                <div class="filter-tabs">
-                    <button class="tab active">All</button>
-                    <button class="tab">Electronics</button>
-                    <button class="tab">Fashion</button>
-                    <button class="tab">Home</button>
+            <div class="flash-header">
+                <div class="flash-title">
+                    <i class="fas fa-bolt"></i>
+                    <h2>⚡ FLASH SALE</h2>
+                    <div class="timer">Ends in: 02:45:30</div>
                 </div>
+                <a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
             </div>
             
-            <div class="product-grid">
-                <!-- Product 1 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=300&fit=crop" alt="Wireless Headphones">
-                        <div class="product-badge">-25%</div>
-                        <div class="product-actions">
-                            <button class="action-btn"><i class="fas fa-heart"></i></button>
-                            <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        </div>
-                    </div>
+            <div class="flash-products">
+                <div class="flash-product">
+                    <div class="discount-badge">-85%</div>
+                    <img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=200&h=200&fit=crop" alt="iPhone">
                     <div class="product-info">
-                        <h3>Premium Wireless Headphones</h3>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <span>(124)</span>
+                        <p class="product-name">iPhone 15 Pro Max</p>
+                        <div class="price-row">
+                            <span class="sale-price">$199</span>
+                            <span class="original-price">$1299</span>
                         </div>
-                        <div class="price">
-                            <span class="current-price">$89.99</span>
-                            <span class="original-price">$119.99</span>
-                        </div>
-                        <button class="add-to-cart">Add to Cart</button>
+                        <div class="sold-count">🔥 2.3k sold</div>
                     </div>
                 </div>
+                
+                <div class="flash-product">
+                    <div class="discount-badge">-75%</div>
+                    <img src="https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?w=200&h=200&fit=crop" alt="Samsung">
+                    <div class="product-info">
+                        <p class="product-name">Samsung Galaxy S24</p>
+                        <div class="price-row">
+                            <span class="sale-price">$249</span>
+                            <span class="original-price">$999</span>
+                        </div>
+                        <div class="sold-count">🔥 1.8k sold</div>
+                    </div>
+                </div>
+                
+                <div class="flash-product">
+                    <div class="discount-badge">-90%</div>
+                    <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=200&h=200&fit=crop" alt="Headphones">
+                    <div class="product-info">
+                        <p class="product-name">AirPods Pro 2</p>
+                        <div class="price-row">
+                            <span class="sale-price">$29</span>
+                            <span class="original-price">$299</span>
+                        </div>
+                        <div class="sold-count">🔥 5.2k sold</div>
+                    </div>
+                </div>
+                
+                <div class="flash-product">
+                    <div class="discount-badge">-80%</div>
+                    <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=200&h=200&fit=crop" alt="Watch">
+                    <div class="product-info">
+                        <p class="product-name">Apple Watch Ultra</p>
+                        <div class="price-row">
+                            <span class="sale-price">$159</span>
+                            <span class="original-price">$799</span>
+                        </div>
+                        <div class="sold-count">🔥 3.1k sold</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Product 2 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=300&h=300&fit=crop" alt="Smartphone">
+    <!-- Categories Grid -->
+    <section class="categories-section">
+        <div class="container">
+            <h2 class="section-title">🛍️ Shop by Category</h2>
+            <div class="categories-grid">
+                <div class="category-item" style="background: linear-gradient(135deg, #ff6b6b, #feca57);">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Mobiles & Tablets</h3>
+                    <p>Up to 80% OFF</p>
+                </div>
+                <div class="category-item" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+                    <i class="fas fa-laptop"></i>
+                    <h3>Laptops & PC</h3>
+                    <p>Starting ₹15,999</p>
+                </div>
+                <div class="category-item" style="background: linear-gradient(135deg, #43e97b, #38f9d7);">
+                    <i class="fas fa-tshirt"></i>
+                    <h3>Fashion</h3>
+                    <p>Min 70% OFF</p>
+                </div>
+                <div class="category-item" style="background: linear-gradient(135deg, #fa709a, #fee140);">
+                    <i class="fas fa-home"></i>
+                    <h3>Home & Kitchen</h3>
+                    <p>Up to 85% OFF</p>
+                </div>
+                <div class="category-item" style="background: linear-gradient(135deg, #a8edea, #fed6e3);">
+                    <i class="fas fa-gamepad"></i>
+                    <h3>Gaming</h3>
+                    <p>Best Deals</p>
+                </div>
+                <div class="category-item" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                    <i class="fas fa-dumbbell"></i>
+                    <h3>Sports & Fitness</h3>
+                    <p>Up to 60% OFF</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- iPhone Exclusive Section -->
+    <section class="iphone-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="header-left">
+                    <h2>📱 iPhone Store</h2>
+                    <p>Exclusive deals on latest iPhones</p>
+                </div>
+                <a href="#" class="view-all-btn">View All iPhones</a>
+            </div>
+            
+            <div class="iphone-grid">
+                <div class="iphone-banner">
+                    <div class="banner-content">
+                        <h3>iPhone 15 Series</h3>
+                        <p>Starting from</p>
+                        <div class="price">₹79,999</div>
+                        <button class="shop-btn">Shop Now</button>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=300&h=400&fit=crop" alt="iPhone 15">
+                </div>
+                
+                <div class="iphone-products">
+                    <div class="iphone-card">
                         <div class="product-badge">New</div>
-                        <div class="product-actions">
-                            <button class="action-btn"><i class="fas fa-heart"></i></button>
-                            <button class="action-btn"><i class="fas fa-eye"></i></button>
+                        <img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=250&h=250&fit=crop" alt="iPhone 15 Pro">
+                        <h4>iPhone 15 Pro Max</h4>
+                        <div class="storage-options">
+                            <span class="storage active">256GB</span>
+                            <span class="storage">512GB</span>
+                            <span class="storage">1TB</span>
                         </div>
+                        <div class="color-options">
+                            <div class="color" style="background: #1f1f1f;"></div>
+                            <div class="color" style="background: #faf7f2;"></div>
+                            <div class="color" style="background: #5F5A50;"></div>
+                            <div class="color active" style="background: #8b7355;"></div>
+                        </div>
+                        <div class="price-section">
+                            <span class="current-price">₹1,34,999</span>
+                            <span class="emi">EMI from ₹5,625/month</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
                     </div>
-                    <div class="product-info">
-                        <h3>Latest Smartphone Pro</h3>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <span>(89)</span>
+                    
+                    <div class="iphone-card">
+                        <div class="product-badge hot">Hot</div>
+                        <img src="https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?w=250&h=250&fit=crop" alt="iPhone 14">
+                        <h4>iPhone 14 Plus</h4>
+                        <div class="storage-options">
+                            <span class="storage active">128GB</span>
+                            <span class="storage">256GB</span>
+                            <span class="storage">512GB</span>
                         </div>
-                        <div class="price">
-                            <span class="current-price">$699.99</span>
+                        <div class="color-options">
+                            <div class="color" style="background: #1f1f1f;"></div>
+                            <div class="color active" style="background: #4285f4;"></div>
+                            <div class="color" style="background: #ff6b6b;"></div>
+                            <div class="color" style="background: #ffd700;"></div>
                         </div>
-                        <button class="add-to-cart">Add to Cart</button>
+                        <div class="price-section">
+                            <span class="current-price">₹79,999</span>
+                            <span class="original-price">₹89,999</span>
+                            <span class="emi">EMI from ₹3,333/month</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
                     </div>
-                </div>
-
-                <!-- Product 3 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&h=300&fit=crop" alt="Sneakers">
-                        <div class="product-badge">-15%</div>
-                        <div class="product-actions">
-                            <button class="action-btn"><i class="fas fa-heart"></i></button>
-                            <button class="action-btn"><i class="fas fa-eye"></i></button>
+                    
+                    <div class="iphone-card">
+                        <div class="product-badge sale">-15%</div>
+                        <img src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=250&h=250&fit=crop" alt="iPhone 13">
+                        <h4>iPhone 13 Mini</h4>
+                        <div class="storage-options">
+                            <span class="storage active">128GB</span>
+                            <span class="storage">256GB</span>
+                            <span class="storage">512GB</span>
                         </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Designer Running Shoes</h3>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <span>(156)</span>
+                        <div class="color-options">
+                            <div class="color active" style="background: #ff6b6b;"></div>
+                            <div class="color" style="background: #4285f4;"></div>
+                            <div class="color" style="background: #1f1f1f;"></div>
+                            <div class="color" style="background: #ff69b4;"></div>
                         </div>
-                        <div class="price">
-                            <span class="current-price">$129.99</span>
-                            <span class="original-price">$149.99</span>
+                        <div class="price-section">
+                            <span class="current-price">₹59,999</span>
+                            <span class="original-price">₹69,999</span>
+                            <span class="emi">EMI from ₹2,500/month</span>
                         </div>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-
-                <!-- Product 4 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=300&fit=crop" alt="Backpack">
-                        <div class="product-actions">
-                            <button class="action-btn"><i class="fas fa-heart"></i></button>
-                            <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Premium Travel Backpack</h3>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <span>(78)</span>
-                        </div>
-                        <div class="price">
-                            <span class="current-price">$79.99</span>
-                        </div>
-                        <button class="add-to-cart">Add to Cart</button>
+                        <button class="add-to-cart-btn">Add to Cart</button>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Product 5 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=300&h=300&fit=crop" alt="Coffee Maker">
-                        <div class="product-badge">Hot</div>
-                        <div class="product-actions">
-                            <button class="action-btn"><i class="fas fa-heart"></i></button>
-                            <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        </div>
+    <!-- Trending Products -->
+    <section class="trending-section">
+        <div class="container">
+            <h2 class="section-title">🔥 Trending Now</h2>
+            <div class="trending-grid">
+                <div class="trending-card">
+                    <div class="card-header">
+                        <span class="trending-badge">🔥 #1 Trending</span>
+                        <i class="fas fa-heart wishlist-btn"></i>
                     </div>
-                    <div class="product-info">
-                        <h3>Smart Coffee Maker</h3>
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=300&fit=crop" alt="Product">
+                    <div class="card-content">
+                        <h4>Wireless Gaming Headset</h4>
                         <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <span>(203)</span>
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-count">(2.5k reviews)</span>
                         </div>
-                        <div class="price">
-                            <span class="current-price">$199.99</span>
+                        <div class="pricing">
+                            <span class="price">₹2,999</span>
+                            <span class="original">₹7,999</span>
+                            <span class="discount">62% OFF</span>
                         </div>
-                        <button class="add-to-cart">Add to Cart</button>
+                        <div class="shipping-info">
+                            <i class="fas fa-shipping-fast"></i>
+                            <span>Free delivery tomorrow</span>
+                        </div>
+                        <button class="quick-add-btn">Quick Add</button>
                     </div>
                 </div>
-
-                <!-- Product 6 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=300&h=300&fit=crop" alt="Watch">
-                        <div class="product-badge">-30%</div>
-                        <div class="product-actions">
-                            <button class="action-btn"><i class="fas fa-heart"></i></button>
-                            <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        </div>
+                
+                <div class="trending-card">
+                    <div class="card-header">
+                        <span class="trending-badge">⚡ Flash Deal</span>
+                        <i class="fas fa-heart wishlist-btn"></i>
                     </div>
-                    <div class="product-info">
-                        <h3>Luxury Smart Watch</h3>
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=300&fit=crop" alt="Product">
+                    <div class="card-content">
+                        <h4>Premium Travel Backpack</h4>
                         <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <span>(167)</span>
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-count">(1.8k reviews)</span>
                         </div>
-                        <div class="price">
-                            <span class="current-price">$349.99</span>
-                            <span class="original-price">$499.99</span>
+                        <div class="pricing">
+                            <span class="price">₹1,599</span>
+                            <span class="original">₹4,999</span>
+                            <span class="discount">68% OFF</span>
                         </div>
-                        <button class="add-to-cart">Add to Cart</button>
+                        <div class="shipping-info">
+                            <i class="fas fa-truck"></i>
+                            <span>Ships in 2-3 days</span>
+                        </div>
+                        <button class="quick-add-btn">Quick Add</button>
                     </div>
+                </div>
+                
+                <div class="trending-card">
+                    <div class="card-header">
+                        <span class="trending-badge">🎯 Best Seller</span>
+                        <i class="fas fa-heart wishlist-btn"></i>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=300&h=300&fit=crop" alt="Product">
+                    <div class="card-content">
+                        <h4>Smart Fitness Watch</h4>
+                        <div class="rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-count">(4.2k reviews)</span>
+                        </div>
+                        <div class="pricing">
+                            <span class="price">₹3,499</span>
+                            <span class="original">₹12,999</span>
+                            <span class="discount">73% OFF</span>
+                        </div>
+                        <div class="shipping-info">
+                            <i class="fas fa-shipping-fast"></i>
+                            <span>Same day delivery</span>
+                        </div>
+                        <button class="quick-add-btn">Quick Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promotional Banners -->
+    <section class="promo-banners">
+        <div class="container">
+            <div class="banners-grid">
+                <div class="promo-banner" style="background: linear-gradient(135deg, #ff9a9e, #fecfef);">
+                    <div class="banner-text">
+                        <h3>Summer Fashion Sale</h3>
+                        <p>Up to 80% OFF on trending fashion</p>
+                        <button>Shop Fashion</button>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=300&h=200&fit=crop" alt="Fashion">
+                </div>
+                
+                <div class="promo-banner" style="background: linear-gradient(135deg, #a8edea, #fed6e3);">
+                    <div class="banner-text">
+                        <h3>Gaming Zone</h3>
+                        <p>Best deals on gaming accessories</p>
+                        <button>Explore Gaming</button>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=300&h=200&fit=crop" alt="Gaming">
                 </div>
             </div>
         </div>
@@ -259,11 +417,16 @@
     <section class="newsletter">
         <div class="container">
             <div class="newsletter-content">
-                <h2>Stay Updated</h2>
-                <p>Subscribe to get special offers, free giveaways, and updates</p>
-                <div class="newsletter-form">
-                    <input type="email" placeholder="Enter your email">
-                    <button>Subscribe</button>
+                <div class="newsletter-text">
+                    <h2>🎉 Get Exclusive Deals!</h2>
+                    <p>Subscribe to our newsletter and get up to 90% OFF on your first order!</p>
+                </div>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">Get Deals</button>
+                </form>
+                <div class="social-proof">
+                    <span>🔥 Join 2M+ happy customers</span>
                 </div>
             </div>
         </div>
@@ -274,52 +437,65 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <div class="logo">
-                        <i class="fas fa-shopping-bag"></i>
-                        <span>EliteShop</span>
+                    <div class="footer-logo">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>MegaMart</span>
                     </div>
-                    <p>Your premium destination for quality products at unbeatable prices.</p>
+                    <p>Your ultimate shopping destination with millions of products at unbeatable prices.</p>
+                    <div class="app-download">
+                        <h4>Download Our App</h4>
+                        <div class="app-buttons">
+                            <img src="https://via.placeholder.com/120x40/000000/FFFFFF?text=App+Store" alt="App Store">
+                            <img src="https://via.placeholder.com/120x40/000000/FFFFFF?text=Play+Store" alt="Play Store">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Track Your Order</a></li>
+                        <li><a href="#">Returns & Refunds</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>About MegaMart</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press & News</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">Investor Relations</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
                         <a href="#"><i class="fab fa-linkedin"></i></a>
                     </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Shipping Info</a></li>
-                        <li><a href="#">Returns</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Categories</h3>
-                    <ul>
-                        <li><a href="#">Electronics</a></li>
-                        <li><a href="#">Fashion</a></li>
-                        <li><a href="#">Home & Living</a></li>
-                        <li><a href="#">Sports</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Customer Service</h3>
-                    <ul>
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Track Order</a></li>
-                        <li><a href="#">Size Guide</a></li>
-                        <li><a href="#">FAQ</a></li>
-                    </ul>
+                    <div class="payment-methods">
+                        <h4>We Accept</h4>
+                        <div class="payment-icons">
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fab fa-cc-paypal"></i>
+                            <i class="fab fa-google-pay"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 EliteShop. All rights reserved. | Designed with ❤️ for LinkedIn Portfolio</p>
+                <p>&copy; 2024 MegaMart. All rights reserved. | Designed for LinkedIn Portfolio 🚀</p>
             </div>
         </div>
     </footer>
