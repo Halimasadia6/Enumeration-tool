@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechVault - Premium iPhones & Accessories</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <h1>TechVault</h1>
+                    <span class="tagline">Premium Technology</span>
+                </div>
+                
+                <div class="nav-menu">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#products" class="nav-link">Products</a>
+                    <a href="#iphones" class="nav-link">iPhones</a>
+                    <a href="#accessories" class="nav-link">Accessories</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                
+                <div class="nav-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search products..." class="search-input">
+                        <button class="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="cart-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </div>
+                </div>
+                
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Experience Innovation</h1>
+                    <p class="hero-subtitle">Discover the latest iPhones and premium Bluetooth accessories with cutting-edge technology and unmatched quality.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary">Shop Now</button>
+                        <button class="btn btn-secondary">View Collection</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=600&h=600&fit=crop" alt="iPhone 15 Pro" class="featured-device">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fab fa-apple"></i>
+                    </div>
+                    <h3>iPhones</h3>
+                    <p>Latest iPhone models with cutting-edge technology</p>
+                    <a href="#iphones" class="category-link">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-headphones"></i>
+                    </div>
+                    <h3>Bluetooth Headphones</h3>
+                    <p>Premium wireless audio experience</p>
+                    <a href="#accessories" class="category-link">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Accessories</h3>
+                    <p>Cases, chargers, and premium add-ons</p>
+                    <a href="#accessories" class="category-link">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- iPhone Collection -->
+    <section id="iphones" class="iphone-collection">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">iPhone Collection</h2>
+                <p class="section-subtitle">Choose from the latest iPhone models with advanced features and stunning design</p>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card" data-category="iphone">
+                    <div class="product-badge">New</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400&h=400&fit=crop" alt="iPhone 15 Pro Max">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">iPhone 15 Pro Max</h3>
+                        <p class="product-description">6.7-inch Super Retina XDR display with ProMotion</p>
+                        <div class="product-colors">
+                            <span class="color-option" data-color="Natural Titanium" style="background: #8B7355"></span>
+                            <span class="color-option" data-color="Blue Titanium" style="background: #395B64"></span>
+                            <span class="color-option" data-color="White Titanium" style="background: #F5F5DC"></span>
+                            <span class="color-option" data-color="Black Titanium" style="background: #2C2C2C"></span>
+                        </div>
+                        <div class="product-storage">
+                            <span class="storage-option active" data-storage="256GB">256GB</span>
+                            <span class="storage-option" data-storage="512GB">512GB</span>
+                            <span class="storage-option" data-storage="1TB">1TB</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$1,199</span>
+                            <span class="original-price">$1,299</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="iphone">
+                    <div class="product-badge">Popular</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?w=400&h=400&fit=crop" alt="iPhone 15 Pro">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">iPhone 15 Pro</h3>
+                        <p class="product-description">6.1-inch Super Retina XDR display with Dynamic Island</p>
+                        <div class="product-colors">
+                            <span class="color-option" data-color="Natural Titanium" style="background: #8B7355"></span>
+                            <span class="color-option" data-color="Blue Titanium" style="background: #395B64"></span>
+                            <span class="color-option" data-color="White Titanium" style="background: #F5F5DC"></span>
+                            <span class="color-option" data-color="Black Titanium" style="background: #2C2C2C"></span>
+                        </div>
+                        <div class="product-storage">
+                            <span class="storage-option active" data-storage="128GB">128GB</span>
+                            <span class="storage-option" data-storage="256GB">256GB</span>
+                            <span class="storage-option" data-storage="512GB">512GB</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$999</span>
+                            <span class="original-price">$1,099</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="iphone">
+                    <div class="product-badge">Best Value</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=400&fit=crop" alt="iPhone 15">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">iPhone 15</h3>
+                        <p class="product-description">6.1-inch Super Retina XDR display with Dynamic Island</p>
+                        <div class="product-colors">
+                            <span class="color-option" data-color="Pink" style="background: #FA7DA0"></span>
+                            <span class="color-option" data-color="Yellow" style="background: #FDD96E"></span>
+                            <span class="color-option" data-color="Green" style="background: #94D3A2"></span>
+                            <span class="color-option" data-color="Blue" style="background: #4F9CF9"></span>
+                            <span class="color-option" data-color="Black" style="background: #2C2C2C"></span>
+                        </div>
+                        <div class="product-storage">
+                            <span class="storage-option active" data-storage="128GB">128GB</span>
+                            <span class="storage-option" data-storage="256GB">256GB</span>
+                            <span class="storage-option" data-storage="512GB">512GB</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$799</span>
+                            <span class="original-price">$899</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="iphone">
+                    <div class="product-badge">Special Offer</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?w=400&h=400&fit=crop" alt="iPhone 14 Pro">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">iPhone 14 Pro</h3>
+                        <p class="product-description">6.1-inch Super Retina XDR display with ProMotion</p>
+                        <div class="product-colors">
+                            <span class="color-option" data-color="Space Black" style="background: #2C2C2C"></span>
+                            <span class="color-option" data-color="Silver" style="background: #F5F5DC"></span>
+                            <span class="color-option" data-color="Gold" style="background: #FAD5A5"></span>
+                            <span class="color-option" data-color="Deep Purple" style="background: #5F4B8B"></span>
+                        </div>
+                        <div class="product-storage">
+                            <span class="storage-option active" data-storage="128GB">128GB</span>
+                            <span class="storage-option" data-storage="256GB">256GB</span>
+                            <span class="storage-option" data-storage="512GB">512GB</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$699</span>
+                            <span class="original-price">$999</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bluetooth Accessories -->
+    <section id="accessories" class="accessories-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Bluetooth Accessories</h2>
+                <p class="section-subtitle">Premium wireless audio and accessories for the perfect mobile experience</p>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card" data-category="accessories">
+                    <div class="product-badge">Bestseller</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&h=400&fit=crop" alt="AirPods Pro">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">AirPods Pro (2nd Gen)</h3>
+                        <p class="product-description">Active Noise Cancellation and Transparency mode</p>
+                        <div class="product-features">
+                            <span class="feature">Noise Cancelling</span>
+                            <span class="feature">Spatial Audio</span>
+                            <span class="feature">MagSafe Case</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$249</span>
+                            <span class="original-price">$279</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessories">
+                    <div class="product-badge">New</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop" alt="AirPods Max">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">AirPods Max</h3>
+                        <p class="product-description">Over-ear headphones with exceptional sound quality</p>
+                        <div class="product-colors">
+                            <span class="color-option" data-color="Space Gray" style="background: #2C2C2C"></span>
+                            <span class="color-option" data-color="Silver" style="background: #F5F5DC"></span>
+                            <span class="color-option" data-color="Sky Blue" style="background: #87CEEB"></span>
+                            <span class="color-option" data-color="Green" style="background: #90EE90"></span>
+                            <span class="color-option" data-color="Pink" style="background: #FFB6C1"></span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$549</span>
+                            <span class="original-price">$579</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessories">
+                    <div class="product-badge">Popular</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=400&h=400&fit=crop" alt="AirPods 3rd Gen">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">AirPods (3rd Gen)</h3>
+                        <p class="product-description">Spatial audio with dynamic head tracking</p>
+                        <div class="product-features">
+                            <span class="feature">Spatial Audio</span>
+                            <span class="feature">Water Resistant</span>
+                            <span class="feature">Lightning Case</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$179</span>
+                            <span class="original-price">$199</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessories">
+                    <div class="product-badge">Limited Edition</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1484704849700-f032a568e944?w=400&h=400&fit=crop" alt="Beats Studio Buds">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Beats Studio Buds</h3>
+                        <p class="product-description">True wireless earbuds with noise cancelling</p>
+                        <div class="product-colors">
+                            <span class="color-option" data-color="Red" style="background: #FF0000"></span>
+                            <span class="color-option" data-color="Black" style="background: #2C2C2C"></span>
+                            <span class="color-option" data-color="White" style="background: #FFFFFF"></span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$149</span>
+                            <span class="original-price">$179</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessories">
+                    <div class="product-badge">Fast Charging</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&h=400&fit=crop" alt="MagSafe Charger">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">MagSafe Wireless Charger</h3>
+                        <p class="product-description">15W fast wireless charging for iPhone</p>
+                        <div class="product-features">
+                            <span class="feature">15W Fast Charging</span>
+                            <span class="feature">MagSafe Compatible</span>
+                            <span class="feature">1m Cable</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$39</span>
+                            <span class="original-price">$49</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessories">
+                    <div class="product-badge">Protection</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=400&h=400&fit=crop" alt="iPhone Case">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">iPhone Leather Case</h3>
+                        <p class="product-description">Premium leather protection with MagSafe</p>
+                        <div class="product-colors">
+                            <span class="color-option" data-color="Midnight" style="background: #191970"></span>
+                            <span class="color-option" data-color="Brown" style="background: #8B4513"></span>
+                            <span class="color-option" data-color="Orange" style="background: #FF8C00"></span>
+                            <span class="color-option" data-color="Wisteria" style="background: #9966CC"></span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$59</span>
+                            <span class="original-price">$69</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose TechVault?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Free Shipping</h3>
+                    <p>Free shipping on all orders over $100. Fast and secure delivery worldwide.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>2 Year Warranty</h3>
+                    <p>Comprehensive warranty coverage on all products with dedicated support.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>30-Day Returns</h3>
+                    <p>Easy returns within 30 days. No questions asked, full refund guaranteed.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock customer support via chat, email, and phone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h2>Stay Updated</h2>
+                    <p>Get the latest product updates, exclusive offers, and tech insights delivered to your inbox.</p>
+                </div>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TechVault</h3>
+                    <p>Your trusted destination for premium iPhones and Bluetooth accessories. Experience innovation with every purchase.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="#iphones">iPhones</a></li>
+                        <li><a href="#accessories">AirPods</a></li>
+                        <li><a href="#accessories">Headphones</a></li>
+                        <li><a href="#accessories">Accessories</a></li>
+                        <li><a href="#accessories">Cases</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Warranty</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 TechVault. All rights reserved. | Premium Technology Store</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-modal-content">
+            <div class="cart-header">
+                <h3>Shopping Cart</h3>
+                <button class="close-cart">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <p class="empty-cart">Your cart is empty</p>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total: <span id="cartTotal">$0.00</span></span>
+                </div>
+                <button class="checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
