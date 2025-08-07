@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TemuMart - Shop Like a Billionaire</title>
+    <title>TechVault - Premium iPhones & Accessories</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -11,666 +11,422 @@
 <body>
     <!-- Header -->
     <header class="header">
-        <div class="header-top">
+        <nav class="navbar">
             <div class="container">
-                <div class="header-left">
-                    <div class="logo">
-                        <h1>TemuMart</h1>
-                        <span class="tagline">Shop Like a Billionaire</span>
+                <div class="nav-brand">
+                    <h1>TechVault</h1>
+                    <span class="tagline">Premium Technology</span>
+                </div>
+                
+                <div class="nav-menu">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#products" class="nav-link">Products</a>
+                    <a href="#iphones" class="nav-link">iPhones</a>
+                    <a href="#accessories" class="nav-link">Accessories</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                
+                <div class="nav-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search products..." class="search-input">
+                        <button class="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="cart-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
                     </div>
                 </div>
-                <div class="header-center">
-                    <div class="search-container">
-                        <input type="text" placeholder="Search for anything..." class="search-input">
-                        <button class="search-btn">
-                            <i class="fas fa-search"></i>
-                        </button>
-                        <div class="trending-keywords">
-                            <span class="keyword">iPhone 15</span>
-                            <span class="keyword">Wireless Headphones</span>
-                            <span class="keyword">Gaming Setup</span>
-                            <span class="keyword">Smart Watch</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="header-right">
-                    <div class="header-actions">
-                        <div class="wishlist-icon">
-                            <i class="fas fa-heart"></i>
-                            <span class="badge">3</span>
-                        </div>
-                        <div class="cart-icon">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span class="badge cart-count">0</span>
-                        </div>
-                        <div class="user-icon">
-                            <i class="fas fa-user-circle"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Navigation -->
-        <nav class="main-nav">
-            <div class="container">
-                <div class="nav-items">
-                    <a href="#" class="nav-item active">
-                        <i class="fas fa-home"></i>
-                        <span>Home</span>
-                    </a>
-                    <a href="#" class="nav-item">
-                        <i class="fas fa-mobile-alt"></i>
-                        <span>Electronics</span>
-                    </a>
-                    <a href="#" class="nav-item">
-                        <i class="fas fa-tshirt"></i>
-                        <span>Fashion</span>
-                    </a>
-                    <a href="#" class="nav-item">
-                        <i class="fas fa-gamepad"></i>
-                        <span>Gaming</span>
-                    </a>
-                    <a href="#" class="nav-item">
-                        <i class="fas fa-home"></i>
-                        <span>Home & Garden</span>
-                    </a>
-                    <a href="#" class="nav-item">
-                        <i class="fas fa-car"></i>
-                        <span>Automotive</span>
-                    </a>
-                    <a href="#" class="nav-item">
-                        <i class="fas fa-dumbbell"></i>
-                        <span>Sports</span>
-                    </a>
-                    <a href="#" class="nav-item">
-                        <i class="fas fa-gift"></i>
-                        <span>Gifts</span>
-                    </a>
+                
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </div>
         </nav>
     </header>
 
-    <!-- Hero Banner -->
-    <section class="hero-banner">
+    <!-- Hero Section -->
+    <section id="home" class="hero">
         <div class="container">
-            <div class="banner-content">
-                <div class="banner-left">
-                    <div class="mega-sale-badge">
-                        <span class="sale-text">MEGA SALE</span>
-                        <span class="discount">UP TO 90% OFF</span>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Experience Innovation</h1>
+                    <p class="hero-subtitle">Discover the latest iPhones and premium Bluetooth accessories with cutting-edge technology and unmatched quality.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary">Shop Now</button>
+                        <button class="btn btn-secondary">View Collection</button>
                     </div>
-                    <h2 class="banner-title">Shop Like a Billionaire</h2>
-                    <p class="banner-subtitle">Millions of products at unbeatable prices</p>
-                    <div class="timer-container">
-                        <span class="timer-label">Flash Sale Ends In:</span>
-                        <div class="countdown-timer">
-                            <div class="time-unit">
-                                <span class="number" id="hours">23</span>
-                                <span class="label">Hours</span>
-                            </div>
-                            <div class="time-unit">
-                                <span class="number" id="minutes">45</span>
-                                <span class="label">Minutes</span>
-                            </div>
-                            <div class="time-unit">
-                                <span class="number" id="seconds">30</span>
-                                <span class="label">Seconds</span>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="shop-now-btn">Shop Now <i class="fas fa-arrow-right"></i></button>
                 </div>
-                <div class="banner-right">
-                    <div class="floating-products">
-                        <div class="floating-product product-1">
-                            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=150&h=150&fit=crop" alt="iPhone">
-                            <span class="price">$999</span>
-                        </div>
-                        <div class="floating-product product-2">
-                            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=150&h=150&fit=crop" alt="Headphones">
-                            <span class="price">$199</span>
-                        </div>
-                        <div class="floating-product product-3">
-                            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=150&h=150&fit=crop" alt="Watch">
-                            <span class="price">$299</span>
-                        </div>
-                    </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=600&h=600&fit=crop" alt="iPhone 15 Pro" class="featured-device">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Flash Deals -->
-    <section class="flash-deals">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">
-                    <i class="fas fa-bolt"></i>
-                    Flash Deals
-                </h2>
-                <div class="flash-timer">
-                    <span class="timer-text">Ends in: </span>
-                    <span class="timer" id="flash-timer">02:45:30</span>
-                </div>
-                <a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="deals-grid">
-                <div class="deal-card">
-                    <div class="deal-badge">-85%</div>
-                    <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=200&h=200&fit=crop" alt="Wireless Earbuds">
-                    <div class="deal-content">
-                        <h4>Wireless Bluetooth Earbuds</h4>
-                        <div class="price-row">
-                            <span class="current-price">$19.99</span>
-                            <span class="original-price">$129.99</span>
-                        </div>
-                        <div class="rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <span class="rating-count">(2,847)</span>
-                        </div>
-                        <div class="sold-count">1,250 sold</div>
-                        <button class="add-to-cart-btn">Add to Cart</button>
-                    </div>
-                </div>
-
-                <div class="deal-card">
-                    <div class="deal-badge">-92%</div>
-                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=200&h=200&fit=crop" alt="Gaming Mouse">
-                    <div class="deal-content">
-                        <h4>RGB Gaming Mouse</h4>
-                        <div class="price-row">
-                            <span class="current-price">$12.99</span>
-                            <span class="original-price">$159.99</span>
-                        </div>
-                        <div class="rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                            <span class="rating-count">(1,892)</span>
-                        </div>
-                        <div class="sold-count">850 sold</div>
-                        <button class="add-to-cart-btn">Add to Cart</button>
-                    </div>
-                </div>
-
-                <div class="deal-card">
-                    <div class="deal-badge">-78%</div>
-                    <img src="https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?w=200&h=200&fit=crop" alt="Smart Watch">
-                    <div class="deal-content">
-                        <h4>Smart Fitness Watch</h4>
-                        <div class="price-row">
-                            <span class="current-price">$39.99</span>
-                            <span class="original-price">$179.99</span>
-                        </div>
-                        <div class="rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <span class="rating-count">(3,421)</span>
-                        </div>
-                        <div class="sold-count">2,100 sold</div>
-                        <button class="add-to-cart-btn">Add to Cart</button>
-                    </div>
-                </div>
-
-                <div class="deal-card">
-                    <div class="deal-badge">-88%</div>
-                    <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=200&h=200&fit=crop" alt="Wireless Charger">
-                    <div class="deal-content">
-                        <h4>Wireless Fast Charger</h4>
-                        <div class="price-row">
-                            <span class="current-price">$15.99</span>
-                            <span class="original-price">$129.99</span>
-                        </div>
-                        <div class="rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <span class="rating-count">(1,567)</span>
-                        </div>
-                        <div class="sold-count">950 sold</div>
-                        <button class="add-to-cart-btn">Add to Cart</button>
-                    </div>
-                </div>
-
-                <div class="deal-card">
-                    <div class="deal-badge">-95%</div>
-                    <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=200&h=200&fit=crop" alt="Phone Case">
-                    <div class="deal-content">
-                        <h4>Shockproof Phone Case</h4>
-                        <div class="price-row">
-                            <span class="current-price">$4.99</span>
-                            <span class="original-price">$99.99</span>
-                        </div>
-                        <div class="rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <span class="rating-count">(4,521)</span>
-                        </div>
-                        <div class="sold-count">3,200 sold</div>
-                        <button class="add-to-cart-btn">Add to Cart</button>
-                    </div>
-                </div>
-
-                <div class="deal-card">
-                    <div class="deal-badge">-82%</div>
-                    <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=200&h=200&fit=crop" alt="LED Strip">
-                    <div class="deal-content">
-                        <h4>RGB LED Strip Lights</h4>
-                        <div class="price-row">
-                            <span class="current-price">$24.99</span>
-                            <span class="original-price">$139.99</span>
-                        </div>
-                        <div class="rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                            <span class="rating-count">(2,189)</span>
-                        </div>
-                        <div class="sold-count">1,450 sold</div>
-                        <button class="add-to-cart-btn">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Categories -->
-    <section class="categories-section">
+    <!-- Featured Categories -->
+    <section class="categories">
         <div class="container">
             <h2 class="section-title">Shop by Category</h2>
             <div class="categories-grid">
                 <div class="category-card">
                     <div class="category-icon">
+                        <i class="fab fa-apple"></i>
+                    </div>
+                    <h3>iPhones</h3>
+                    <p>Latest iPhone models with cutting-edge technology</p>
+                    <a href="#iphones" class="category-link">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-headphones"></i>
+                    </div>
+                    <h3>Bluetooth Headphones</h3>
+                    <p>Premium wireless audio experience</p>
+                    <a href="#accessories" class="category-link">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
-                    <h3>Electronics</h3>
-                    <p>Phones, Laptops, Gadgets</p>
-                    <div class="category-bg"></div>
-                </div>
-
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-tshirt"></i>
-                    </div>
-                    <h3>Fashion</h3>
-                    <p>Clothing, Shoes, Accessories</p>
-                    <div class="category-bg"></div>
-                </div>
-
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3>Home & Garden</h3>
-                    <p>Furniture, Decor, Tools</p>
-                    <div class="category-bg"></div>
-                </div>
-
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-gamepad"></i>
-                    </div>
-                    <h3>Gaming</h3>
-                    <p>Consoles, Games, Accessories</p>
-                    <div class="category-bg"></div>
-                </div>
-
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-dumbbell"></i>
-                    </div>
-                    <h3>Sports & Fitness</h3>
-                    <p>Equipment, Apparel, Supplements</p>
-                    <div class="category-bg"></div>
-                </div>
-
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-car"></i>
-                    </div>
-                    <h3>Automotive</h3>
-                    <p>Parts, Accessories, Tools</p>
-                    <div class="category-bg"></div>
-                </div>
-
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-baby"></i>
-                    </div>
-                    <h3>Baby & Kids</h3>
-                    <p>Toys, Clothes, Care</p>
-                    <div class="category-bg"></div>
-                </div>
-
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-gem"></i>
-                    </div>
-                    <h3>Jewelry</h3>
-                    <p>Watches, Rings, Necklaces</p>
-                    <div class="category-bg"></div>
+                    <h3>Accessories</h3>
+                    <p>Cases, chargers, and premium add-ons</p>
+                    <a href="#accessories" class="category-link">Explore <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Trending Products -->
-    <section class="trending-section">
+    <!-- iPhone Collection -->
+    <section id="iphones" class="iphone-collection">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">
-                    <i class="fas fa-fire"></i>
-                    Trending Now
-                </h2>
-                <div class="filters">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="electronics">Electronics</button>
-                    <button class="filter-btn" data-filter="fashion">Fashion</button>
-                    <button class="filter-btn" data-filter="home">Home</button>
-                </div>
+                <h2 class="section-title">iPhone Collection</h2>
+                <p class="section-subtitle">Choose from the latest iPhone models with advanced features and stunning design</p>
             </div>
+            
             <div class="products-grid">
-                <div class="product-card" data-category="electronics">
-                    <div class="product-badge hot">HOT</div>
-                    <div class="wishlist-btn">
-                        <i class="far fa-heart"></i>
-                    </div>
-                    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=250&h=250&fit=crop" alt="iPhone 15">
-                    <div class="product-content">
-                        <h4>iPhone 15 Pro Max 256GB</h4>
-                        <div class="rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <span class="rating-count">(1,247)</span>
+                <div class="product-card" data-category="iphone">
+                    <div class="product-badge">New</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400&h=400&fit=crop" alt="iPhone 15 Pro Max">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
                         </div>
-                        <div class="price-section">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">iPhone 15 Pro Max</h3>
+                        <p class="product-description">6.7-inch Super Retina XDR display with ProMotion</p>
+                        <div class="product-colors">
+                            <span class="color-option" data-color="Natural Titanium" style="background: #8B7355"></span>
+                            <span class="color-option" data-color="Blue Titanium" style="background: #395B64"></span>
+                            <span class="color-option" data-color="White Titanium" style="background: #F5F5DC"></span>
+                            <span class="color-option" data-color="Black Titanium" style="background: #2C2C2C"></span>
+                        </div>
+                        <div class="product-storage">
+                            <span class="storage-option active" data-storage="256GB">256GB</span>
+                            <span class="storage-option" data-storage="512GB">512GB</span>
+                            <span class="storage-option" data-storage="1TB">1TB</span>
+                        </div>
+                        <div class="product-price">
                             <span class="current-price">$1,199</span>
-                            <span class="original-price">$1,399</span>
-                            <span class="discount">-14%</span>
+                            <span class="original-price">$1,299</span>
                         </div>
-                        <div class="shipping-info">
-                            <i class="fas fa-shipping-fast"></i>
-                            <span>Free Shipping</span>
-                        </div>
-                        <button class="quick-add-btn">Quick Add</button>
+                        <button class="add-to-cart-btn">Add to Cart</button>
                     </div>
                 </div>
 
-                <div class="product-card" data-category="electronics">
-                    <div class="product-badge sale">SALE</div>
-                    <div class="wishlist-btn">
-                        <i class="far fa-heart"></i>
+                <div class="product-card" data-category="iphone">
+                    <div class="product-badge">Popular</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?w=400&h=400&fit=crop" alt="iPhone 15 Pro">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
                     </div>
-                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=250&h=250&fit=crop" alt="Headphones">
-                    <div class="product-content">
-                        <h4>Wireless Noise Cancelling Headphones</h4>
-                        <div class="rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                            <span class="rating-count">(892)</span>
+                    <div class="product-info">
+                        <h3 class="product-name">iPhone 15 Pro</h3>
+                        <p class="product-description">6.1-inch Super Retina XDR display with Dynamic Island</p>
+                        <div class="product-colors">
+                            <span class="color-option" data-color="Natural Titanium" style="background: #8B7355"></span>
+                            <span class="color-option" data-color="Blue Titanium" style="background: #395B64"></span>
+                            <span class="color-option" data-color="White Titanium" style="background: #F5F5DC"></span>
+                            <span class="color-option" data-color="Black Titanium" style="background: #2C2C2C"></span>
                         </div>
-                        <div class="price-section">
-                            <span class="current-price">$299</span>
-                            <span class="original-price">$499</span>
-                            <span class="discount">-40%</span>
+                        <div class="product-storage">
+                            <span class="storage-option active" data-storage="128GB">128GB</span>
+                            <span class="storage-option" data-storage="256GB">256GB</span>
+                            <span class="storage-option" data-storage="512GB">512GB</span>
                         </div>
-                        <div class="shipping-info">
-                            <i class="fas fa-shipping-fast"></i>
-                            <span>Free Shipping</span>
+                        <div class="product-price">
+                            <span class="current-price">$999</span>
+                            <span class="original-price">$1,099</span>
                         </div>
-                        <button class="quick-add-btn">Quick Add</button>
-                    </div>
-                </div>
-
-                <div class="product-card" data-category="electronics">
-                    <div class="product-badge">NEW</div>
-                    <div class="wishlist-btn">
-                        <i class="far fa-heart"></i>
-                    </div>
-                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=250&h=250&fit=crop" alt="Sneakers">
-                    <div class="product-content">
-                        <h4>Gaming Laptop RTX 4080</h4>
-                        <div class="rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <span class="rating-count">(456)</span>
-                        </div>
-                        <div class="price-section">
-                            <span class="current-price">$2,199</span>
-                            <span class="original-price">$2,899</span>
-                            <span class="discount">-24%</span>
-                        </div>
-                        <div class="shipping-info">
-                            <i class="fas fa-shipping-fast"></i>
-                            <span>Free Shipping</span>
-                        </div>
-                        <button class="quick-add-btn">Quick Add</button>
+                        <button class="add-to-cart-btn">Add to Cart</button>
                     </div>
                 </div>
 
-                <div class="product-card" data-category="fashion">
-                    <div class="product-badge trending">TRENDING</div>
-                    <div class="wishlist-btn">
-                        <i class="far fa-heart"></i>
+                <div class="product-card" data-category="iphone">
+                    <div class="product-badge">Best Value</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=400&fit=crop" alt="iPhone 15">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
                     </div>
-                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=250&h=250&fit=crop" alt="Sneakers">
-                    <div class="product-content">
-                        <h4>Premium Running Sneakers</h4>
-                        <div class="rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <span class="rating-count">(723)</span>
+                    <div class="product-info">
+                        <h3 class="product-name">iPhone 15</h3>
+                        <p class="product-description">6.1-inch Super Retina XDR display with Dynamic Island</p>
+                        <div class="product-colors">
+                            <span class="color-option" data-color="Pink" style="background: #FA7DA0"></span>
+                            <span class="color-option" data-color="Yellow" style="background: #FDD96E"></span>
+                            <span class="color-option" data-color="Green" style="background: #94D3A2"></span>
+                            <span class="color-option" data-color="Blue" style="background: #4F9CF9"></span>
+                            <span class="color-option" data-color="Black" style="background: #2C2C2C"></span>
                         </div>
-                        <div class="price-section">
-                            <span class="current-price">$149</span>
-                            <span class="original-price">$199</span>
-                            <span class="discount">-25%</span>
+                        <div class="product-storage">
+                            <span class="storage-option active" data-storage="128GB">128GB</span>
+                            <span class="storage-option" data-storage="256GB">256GB</span>
+                            <span class="storage-option" data-storage="512GB">512GB</span>
                         </div>
-                        <div class="shipping-info">
-                            <i class="fas fa-shipping-fast"></i>
-                            <span>Free Shipping</span>
+                        <div class="product-price">
+                            <span class="current-price">$799</span>
+                            <span class="original-price">$899</span>
                         </div>
-                        <button class="quick-add-btn">Quick Add</button>
-                    </div>
-                </div>
-
-                <div class="product-card" data-category="home">
-                    <div class="product-badge">LIMITED</div>
-                    <div class="wishlist-btn">
-                        <i class="far fa-heart"></i>
-                    </div>
-                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=250&h=250&fit=crop" alt="Furniture">
-                    <div class="product-content">
-                        <h4>Modern LED Table Lamp</h4>
-                        <div class="rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                            <span class="rating-count">(634)</span>
-                        </div>
-                        <div class="price-section">
-                            <span class="current-price">$89</span>
-                            <span class="original-price">$129</span>
-                            <span class="discount">-31%</span>
-                        </div>
-                        <div class="shipping-info">
-                            <i class="fas fa-shipping-fast"></i>
-                            <span>Free Shipping</span>
-                        </div>
-                        <button class="quick-add-btn">Quick Add</button>
+                        <button class="add-to-cart-btn">Add to Cart</button>
                     </div>
                 </div>
 
-                <div class="product-card" data-category="electronics">
-                    <div class="product-badge hot">HOT</div>
-                    <div class="wishlist-btn">
-                        <i class="far fa-heart"></i>
+                <div class="product-card" data-category="iphone">
+                    <div class="product-badge">Special Offer</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?w=400&h=400&fit=crop" alt="iPhone 14 Pro">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
                     </div>
-                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=250&h=250&fit=crop" alt="Smart Watch">
-                    <div class="product-content">
-                        <h4>Apple Watch Series 9</h4>
-                        <div class="rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <span class="rating-count">(2,156)</span>
+                    <div class="product-info">
+                        <h3 class="product-name">iPhone 14 Pro</h3>
+                        <p class="product-description">6.1-inch Super Retina XDR display with ProMotion</p>
+                        <div class="product-colors">
+                            <span class="color-option" data-color="Space Black" style="background: #2C2C2C"></span>
+                            <span class="color-option" data-color="Silver" style="background: #F5F5DC"></span>
+                            <span class="color-option" data-color="Gold" style="background: #FAD5A5"></span>
+                            <span class="color-option" data-color="Deep Purple" style="background: #5F4B8B"></span>
                         </div>
-                        <div class="price-section">
-                            <span class="current-price">$399</span>
-                            <span class="original-price">$499</span>
-                            <span class="discount">-20%</span>
+                        <div class="product-storage">
+                            <span class="storage-option active" data-storage="128GB">128GB</span>
+                            <span class="storage-option" data-storage="256GB">256GB</span>
+                            <span class="storage-option" data-storage="512GB">512GB</span>
                         </div>
-                        <div class="shipping-info">
-                            <i class="fas fa-shipping-fast"></i>
-                            <span>Free Shipping</span>
+                        <div class="product-price">
+                            <span class="current-price">$699</span>
+                            <span class="original-price">$999</span>
                         </div>
-                        <button class="quick-add-btn">Quick Add</button>
-                    </div>
-                </div>
-
-                <div class="product-card" data-category="fashion">
-                    <div class="product-badge sale">SALE</div>
-                    <div class="wishlist-btn">
-                        <i class="far fa-heart"></i>
-                    </div>
-                    <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=250&h=250&fit=crop" alt="Clothes">
-                    <div class="product-content">
-                        <h4>Designer Winter Jacket</h4>
-                        <div class="rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <span class="rating-count">(445)</span>
-                        </div>
-                        <div class="price-section">
-                            <span class="current-price">$199</span>
-                            <span class="original-price">$299</span>
-                            <span class="discount">-33%</span>
-                        </div>
-                        <div class="shipping-info">
-                            <i class="fas fa-shipping-fast"></i>
-                            <span>Free Shipping</span>
-                        </div>
-                        <button class="quick-add-btn">Quick Add</button>
+                        <button class="add-to-cart-btn">Add to Cart</button>
                     </div>
                 </div>
-
-                <div class="product-card" data-category="home">
-                    <div class="product-badge">BESTSELLER</div>
-                    <div class="wishlist-btn">
-                        <i class="far fa-heart"></i>
-                    </div>
-                    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=250&h=250&fit=crop" alt="Home Decor">
-                    <div class="product-content">
-                        <h4>Smart Home Security System</h4>
-                        <div class="rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <span class="rating-count">(1,789)</span>
-                        </div>
-                        <div class="price-section">
-                            <span class="current-price">$299</span>
-                            <span class="original-price">$449</span>
-                            <span class="discount">-33%</span>
-                        </div>
-                        <div class="shipping-info">
-                            <i class="fas fa-shipping-fast"></i>
-                            <span>Free Shipping</span>
-                        </div>
-                        <button class="quick-add-btn">Quick Add</button>
-                    </div>
-                </div>
-            </div>
-            <div class="load-more-container">
-                <button class="load-more-btn">Load More Products</button>
             </div>
         </div>
     </section>
 
-    <!-- Promotional Banners -->
-    <section class="promo-banners">
+    <!-- Bluetooth Accessories -->
+    <section id="accessories" class="accessories-section">
         <div class="container">
-            <div class="banners-grid">
-                <div class="promo-banner banner-1">
-                    <div class="banner-content">
-                        <h3>Electronics Sale</h3>
-                        <p>Up to 70% off on gadgets</p>
-                        <button class="banner-btn">Shop Now</button>
+            <div class="section-header">
+                <h2 class="section-title">Bluetooth Accessories</h2>
+                <p class="section-subtitle">Premium wireless audio and accessories for the perfect mobile experience</p>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card" data-category="accessories">
+                    <div class="product-badge">Bestseller</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&h=400&fit=crop" alt="AirPods Pro">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">AirPods Pro (2nd Gen)</h3>
+                        <p class="product-description">Active Noise Cancellation and Transparency mode</p>
+                        <div class="product-features">
+                            <span class="feature">Noise Cancelling</span>
+                            <span class="feature">Spatial Audio</span>
+                            <span class="feature">MagSafe Case</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$249</span>
+                            <span class="original-price">$279</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
                     </div>
                 </div>
-                <div class="promo-banner banner-2">
-                    <div class="banner-content">
-                        <h3>Fashion Week</h3>
-                        <p>Trendy clothes for everyone</p>
-                        <button class="banner-btn">Explore</button>
+
+                <div class="product-card" data-category="accessories">
+                    <div class="product-badge">New</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop" alt="AirPods Max">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
                     </div>
+                    <div class="product-info">
+                        <h3 class="product-name">AirPods Max</h3>
+                        <p class="product-description">Over-ear headphones with exceptional sound quality</p>
+                        <div class="product-colors">
+                            <span class="color-option" data-color="Space Gray" style="background: #2C2C2C"></span>
+                            <span class="color-option" data-color="Silver" style="background: #F5F5DC"></span>
+                            <span class="color-option" data-color="Sky Blue" style="background: #87CEEB"></span>
+                            <span class="color-option" data-color="Green" style="background: #90EE90"></span>
+                            <span class="color-option" data-color="Pink" style="background: #FFB6C1"></span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$549</span>
+                            <span class="original-price">$579</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessories">
+                    <div class="product-badge">Popular</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=400&h=400&fit=crop" alt="AirPods 3rd Gen">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">AirPods (3rd Gen)</h3>
+                        <p class="product-description">Spatial audio with dynamic head tracking</p>
+                        <div class="product-features">
+                            <span class="feature">Spatial Audio</span>
+                            <span class="feature">Water Resistant</span>
+                            <span class="feature">Lightning Case</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$179</span>
+                            <span class="original-price">$199</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessories">
+                    <div class="product-badge">Limited Edition</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1484704849700-f032a568e944?w=400&h=400&fit=crop" alt="Beats Studio Buds">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Beats Studio Buds</h3>
+                        <p class="product-description">True wireless earbuds with noise cancelling</p>
+                        <div class="product-colors">
+                            <span class="color-option" data-color="Red" style="background: #FF0000"></span>
+                            <span class="color-option" data-color="Black" style="background: #2C2C2C"></span>
+                            <span class="color-option" data-color="White" style="background: #FFFFFF"></span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$149</span>
+                            <span class="original-price">$179</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessories">
+                    <div class="product-badge">Fast Charging</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&h=400&fit=crop" alt="MagSafe Charger">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">MagSafe Wireless Charger</h3>
+                        <p class="product-description">15W fast wireless charging for iPhone</p>
+                        <div class="product-features">
+                            <span class="feature">15W Fast Charging</span>
+                            <span class="feature">MagSafe Compatible</span>
+                            <span class="feature">1m Cable</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$39</span>
+                            <span class="original-price">$49</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessories">
+                    <div class="product-badge">Protection</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=400&h=400&fit=crop" alt="iPhone Case">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">iPhone Leather Case</h3>
+                        <p class="product-description">Premium leather protection with MagSafe</p>
+                        <div class="product-colors">
+                            <span class="color-option" data-color="Midnight" style="background: #191970"></span>
+                            <span class="color-option" data-color="Brown" style="background: #8B4513"></span>
+                            <span class="color-option" data-color="Orange" style="background: #FF8C00"></span>
+                            <span class="color-option" data-color="Wisteria" style="background: #9966CC"></span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$59</span>
+                            <span class="original-price">$69</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose TechVault?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Free Shipping</h3>
+                    <p>Free shipping on all orders over $100. Fast and secure delivery worldwide.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>2 Year Warranty</h3>
+                    <p>Comprehensive warranty coverage on all products with dedicated support.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>30-Day Returns</h3>
+                    <p>Easy returns within 30 days. No questions asked, full refund guaranteed.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock customer support via chat, email, and phone.</p>
                 </div>
             </div>
         </div>
@@ -680,117 +436,91 @@
     <section class="newsletter">
         <div class="container">
             <div class="newsletter-content">
-                <div class="newsletter-left">
-                    <h2>Never Miss a Deal!</h2>
-                    <p>Get exclusive offers and updates straight to your inbox</p>
-                    <div class="newsletter-stats">
-                        <span><i class="fas fa-users"></i> 2M+ subscribers</span>
-                        <span><i class="fas fa-gift"></i> Exclusive deals</span>
-                        <span><i class="fas fa-bell"></i> Early access</span>
-                    </div>
+                <div class="newsletter-text">
+                    <h2>Stay Updated</h2>
+                    <p>Get the latest product updates, exclusive offers, and tech insights delivered to your inbox.</p>
                 </div>
-                <div class="newsletter-right">
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Enter your email address" required>
-                        <button type="submit">Subscribe Now</button>
-                    </form>
-                    <p class="privacy-text">We respect your privacy. Unsubscribe anytime.</p>
-                </div>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer id="contact" class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <div class="footer-logo">
-                        <h3>TemuMart</h3>
-                        <p>Shop Like a Billionaire</p>
-                    </div>
-                    <div class="app-download">
-                        <p>Download Our App</p>
-                        <div class="app-buttons">
-                            <a href="#" class="app-btn">
-                                <i class="fab fa-apple"></i>
-                                <span>App Store</span>
-                            </a>
-                            <a href="#" class="app-btn">
-                                <i class="fab fa-google-play"></i>
-                                <span>Google Play</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Customer Service</h4>
-                    <ul>
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Track Your Order</a></li>
-                        <li><a href="#">Returns & Refunds</a></li>
-                        <li><a href="#">Size Guide</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h4>About TemuMart</h4>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Press</a></li>
-                        <li><a href="#">Investor Relations</a></li>
-                        <li><a href="#">Sustainability</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Tools & Features</h4>
-                    <ul>
-                        <li><a href="#">Mobile App</a></li>
-                        <li><a href="#">Site Map</a></li>
-                        <li><a href="#">Store Directory</a></li>
-                        <li><a href="#">Gift Cards</a></li>
-                        <li><a href="#">Affiliate Program</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Connect With Us</h4>
+                    <h3>TechVault</h3>
+                    <p>Your trusted destination for premium iPhones and Bluetooth accessories. Experience innovation with every purchase.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
                     </div>
-                    <div class="payment-methods">
-                        <h4>We Accept</h4>
-                        <div class="payment-icons">
-                            <i class="fab fa-cc-visa"></i>
-                            <i class="fab fa-cc-mastercard"></i>
-                            <i class="fab fa-cc-amex"></i>
-                            <i class="fab fa-cc-paypal"></i>
-                            <i class="fab fa-cc-apple-pay"></i>
-                        </div>
-                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="#iphones">iPhones</a></li>
+                        <li><a href="#accessories">AirPods</a></li>
+                        <li><a href="#accessories">Headphones</a></li>
+                        <li><a href="#accessories">Accessories</a></li>
+                        <li><a href="#accessories">Cases</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Warranty</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
                 </div>
             </div>
-
+            
             <div class="footer-bottom">
-                <div class="footer-bottom-content">
-                    <p>&copy; 2024 TemuMart. All rights reserved.</p>
-                    <div class="footer-links">
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Service</a>
-                        <a href="#">Cookie Policy</a>
-                    </div>
-                </div>
+                <p>&copy; 2024 TechVault. All rights reserved. | Premium Technology Store</p>
             </div>
         </div>
     </footer>
+
+    <!-- Shopping Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-modal-content">
+            <div class="cart-header">
+                <h3>Shopping Cart</h3>
+                <button class="close-cart">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <p class="empty-cart">Your cart is empty</p>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total: <span id="cartTotal">$0.00</span></span>
+                </div>
+                <button class="checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
