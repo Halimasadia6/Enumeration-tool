@@ -342,15 +342,15 @@ function showNotification(message, type = 'info') {
         position: fixed;
         top: 100px;
         right: 20px;
-        background: ${type === 'success' ? 'linear-gradient(135deg, #4CAF50, #45a049)' : 'linear-gradient(135deg, #667eea, #764ba2)'};
+        background: ${type === 'success' ? '#000000' : '#333333'};
         color: white;
         padding: 1rem 1.5rem;
-        border-radius: 15px;
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        border-radius: 0;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
         z-index: 3000;
         animation: slideInEnhanced 0.4s ease;
         max-width: 300px;
-        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
     `;
     
     document.body.appendChild(notification);
@@ -569,8 +569,8 @@ enhancedStyle.textContent = `
     .enhanced-card {
         position: relative;
         overflow: hidden;
-        background: linear-gradient(145deg, #ffffff, #f8f9fa);
-        border: 1px solid rgba(102, 126, 234, 0.1);
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.08);
     }
     
     .enhanced-card::before {
@@ -580,7 +580,7 @@ enhancedStyle.textContent = `
         left: -100%;
         width: 100%;
         height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+        background: linear-gradient(90deg, transparent, rgba(0,0,0,0.02), transparent);
         transition: left 0.5s;
     }
     
@@ -644,14 +644,14 @@ enhancedStyle.textContent = `
     }
     
     .enhanced-badge {
-        background: linear-gradient(135deg, #ff6b6b, #ee5a24);
-        font-weight: 700;
-        letter-spacing: 0.5px;
-        text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        background: #000000;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
     }
     
     .product-category {
-        color: #667eea;
+        color: #000000;
         font-size: 0.8rem;
         font-weight: 600;
         text-transform: uppercase;
@@ -690,10 +690,10 @@ enhancedStyle.textContent = `
     }
     
     .enhanced-btn {
-        background: linear-gradient(135deg, #667eea, #764ba2);
-        border: none;
+        background: #000000;
+        border: 2px solid #000000;
         padding: 1rem;
-        border-radius: 15px;
+        border-radius: 0;
         color: white;
         font-weight: 600;
         cursor: pointer;
@@ -703,6 +703,8 @@ enhancedStyle.textContent = `
         align-items: center;
         position: relative;
         overflow: hidden;
+        text-transform: uppercase;
+        letter-spacing: 1px;
     }
     
     .enhanced-btn::before {
@@ -712,17 +714,19 @@ enhancedStyle.textContent = `
         left: -100%;
         width: 100%;
         height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-        transition: left 0.5s;
+        background: #ffffff;
+        transition: left 0.3s ease;
+        z-index: -1;
     }
     
     .enhanced-btn:hover::before {
-        left: 100%;
+        left: 0;
     }
     
     .enhanced-btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+        color: #000000;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     }
     
     .btn-icon {
@@ -750,37 +754,39 @@ enhancedStyle.textContent = `
     }
     
     .enhanced-cart-item {
-        background: #f8f9fa;
-        border-radius: 15px;
-        padding: 1rem;
+        background: #ffffff;
+        border-radius: 0;
+        padding: 1.5rem;
         margin-bottom: 1rem;
-        border: 1px solid #e9ecef;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     }
     
     .remove-item {
-        background: #ff4757;
+        background: #000000;
         color: white;
         border: none;
         width: 30px;
         height: 30px;
-        border-radius: 50%;
+        border-radius: 0;
         cursor: pointer;
         font-size: 1.2rem;
         transition: all 0.3s ease;
     }
     
     .remove-item:hover {
-        background: #ff3742;
-        transform: scale(1.1);
+        background: #333333;
+        transform: scale(1.05);
     }
     
     .quantity-display {
-        background: white;
+        background: #f8f9fa;
         padding: 0.5rem 1rem;
-        border-radius: 20px;
+        border-radius: 0;
         font-weight: 600;
         min-width: 40px;
         text-align: center;
+        border: 1px solid rgba(0, 0, 0, 0.1);
     }
     
     .notification-content {
